@@ -1,0 +1,14 @@
+.main input:hover ~ span,
+.main input:focus ~ span,
+.main input:valid ~ span
+{
+    color:rgb(29 78 216);
+    transform: translateX(10px) translateY(-33px);
+    font-size: 0.7em;
+    background-color: white;
+    border-left:2px solid rgb(29 78 216);
+    border-right:2px solid rgb(29 78 216);
+    background-blend-mode: multiply;
+    
+
+}
