@@ -1,5 +1,15 @@
 {
-  "data": [],
+  "data": [
+    {
+      "id": "751d",
+      "username": "Roniwilliams",
+      "companyname": "Raptors Restaurant",
+      "companyslogan": "Taste of soul",
+      "description": "Our Company offers the most tasty dish",
+      "logo": "blob:http://localhost:5173/48b22d66-de93-4d3a-b04c-03c33b21cf9b",
+      "companydata": []
+    }
+  ],
   "productsdata": [],
   "templatedata": {}
 }
