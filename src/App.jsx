@@ -6,7 +6,8 @@ import { Details } from './components/Home/Details';
 import { Dashboard } from './pages/Dashboard';
 import { CreateBill } from './pages/CreateBill';
 
-function App() {
+function App()
+{
   return (
   <>
   <div 
