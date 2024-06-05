@@ -10,7 +10,8 @@ function App() {
   return (
   <>
   <div 
-    className="bg-white bg-gradient-to-tr from-blue-600 via-cyan-600 to-purple-600  flex flex-col items-center  ">
+    className="bg-white 
+    bg-gradient-to-tr from-blue-600 via-cyan-600 to-purple-600  flex flex-col items-center  ">
       
       <Routes>
         <Route path='/' element={<Home/>}/>
