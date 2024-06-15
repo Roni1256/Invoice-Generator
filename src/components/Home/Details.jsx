@@ -109,11 +109,11 @@ export const Details = ({mode}) => {
                   
                  />
                 <div className=" main flex flex-col  text-slate-800 text-xl font-bold p-5  gap-3 relative transition-all ease-in-out duration-200 ">
-                  <label className='   text-xl uppercase text-[1em] '>Description about company</label>
+                  <label className='   text-xl uppercase text-[1em] '>Company Address</label>
                     <textarea type="text" 
                     className='ring-4 rounded-lg ring-slate-800 focus:outline-none w-full p-2 tracking-wide hover:ring-blue-500 focus:ring-blue-700 transition-all  duration-300 ease-in-out 
                     ' 
-                    placeholder='Our company is an ....'
+                    placeholder=' ....'
                     onChange={(e)=>setDescription(e.target.value)}
                     
 
@@ -121,12 +121,12 @@ export const Details = ({mode}) => {
                      />
                      
                 </div>
-                <div className="p-5 ring-4 ring-slate-800 rounded-md w-fit flex flex-col gap-10  ml-5 mb-5">
+                {/* <div className="p-5 ring-4 ring-slate-800 rounded-md w-fit flex flex-col gap-10  ml-5 mb-5">
                 <label className='  font-bold text-xl uppercase text-[1em] '>Upload company logo</label>
                   
                 <input type="file" onChange={(e)=>handleFileChange(e)}
                 ref={inputRef} />
-                </div>
+                </div> */}
                 
 
 

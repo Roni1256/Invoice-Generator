@@ -77,17 +77,17 @@ export const Dashboard = () => {
                 </strong>
             </div>
             <div className={profile}>
-                <img src={data.logo} className='rounded-full w-[200px] h-[200px] ring-8 ring-slate-700 ring-offset-8'/>
+               
                 <div className="p-2">
-                <h1 className='text-3xl font-semibold text-yellow-600 mt-4 text-center'>
+                <h1 className='text-5xl font-semibold text-yellow-600 mt-4 text-center'>
                     {data.companyname}
                 </h1>
-                <p className='text-center text-lg font-bold  text-slate-600'>
+                <p className='text-center text-lg font-bold  text-slate-600 mt-5 ' >
                     {data.companyslogan}
                 </p>
-                <div className='p-4 ring-4 rounded-lg ring-slate-700 mx-6 mt-4 h-[150px] overflow-y-auto relative lg:w-[500px] xl:w-[600px]'>
-                    <span className='absolute top-1 text-slate-600 font-bold underline'>Company Description</span>
-                    <p className='mt-5'>
+                <div className='p-4 ring-4 rounded-lg ring-slate-700 mx-6 mt-4 h-[150px] overflow-y-auto relative lg:w-[500px] xl:w-[600px] '>
+                    <span className='absolute top-1 text-slate-600 font-bold underline'>Company Address</span>
+                    <p className='mt-5  '>
                         {data.description}
                     </p>
                 </div>

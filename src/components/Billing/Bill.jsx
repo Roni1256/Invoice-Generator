@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const
 box='bg-white ring-2 ring-gray-800  px-3 w-[400px]' ,
@@ -12,10 +13,12 @@ tr='border-b-2 border-dashed border-gray-700',
 th='text-center',
 td='p-1 text-center',
 footTxt='text-lg font-semibold text-center underline mb-3 mt-7'
-
+const API='http://localhost:8000/data'
 export const Bill = ({products,billno,date,time}) => {
      const[total,settotal]=useState(0)
-
+     const [cName,setCname]=useState("");
+     const [cSlogan,setCslogan]=useState("")
+     const [cAddress,setCaddress]=useState("")
     const handleTotal=()=>{
         let tot=0
         products.map(product=>{
@@ -23,33 +26,45 @@ export const Bill = ({products,billno,date,time}) => {
         })
         settotal(tot)
     }
+    async function fetchData(){
+        await axios.get(API)
+        .then((res)=>{
+            setCname(res.data[0].companyname);
+            setCaddress(res.data[0].description);
+            setCslogan(res.data[0].companyslogan);
+        })
+        .catch(err=>console.log(err.message))
+    }
     useEffect(()=>handleTotal());
+    useEffect(()=>{
+        fetchData();
+    },[])
+    
   return (
     <>
         
         <div className={`${box}`} >
                 <header className={header}>
-                    <h1 className={heading}>Raptors Restaurant</h1>
-                    <h3 className={`text-md font-bold `}>Your Spicy Companion...</h3>
-                    <p className={address}>320,Chruch Street,Somanur road, <br />Kombakkadu Pudhur,Tiruppur-641 668, <br />Tamil Nadu </p>
+                    <h1 className={heading}>{cName}</h1>
+                    <h3 className={`text-md font-bold `}>{cSlogan}</h3>
+                    <p className={address}>{cAddress}</p>
                 </header>
                 
                 <main className={main}>
-                    <span className='text-md font-semibold '>
-                        {
-                            date
-                        }
-                    </span>
-                    <br />
-                    <span className='text-md font-semibold '>
-                        {time}
-                    </span>
-                    <h3 className={billNo} >Bill No :{billno}</h3>
+                    <div className="flex justify-between ">
+                        <div className="flex flex-col ">
+                        <span className='text-md font-semibold '>{date}</span>
+                        <span className='text-md font-semibold '>{time}</span>
+                        </div>
+                        
+                        <h3 className={billNo} >Bill No :{billno}</h3>
+                    </div>
+                 
                     <table className={tableStyle}>
                         <thead>
                             <tr className={tr}>
                                 <th className={`${th} `}>S.no</th>
-                                <th className={`${th} w-[30%]`}>Dishes</th>
+                                <th className={`${th} w-[30%]`}>Product</th>
                                 <th className={`${th}`}>Price</th>
                                 <th className={`${th}`}>Quantity</th>
                                 <th className={`${th}`}>Total</th>
